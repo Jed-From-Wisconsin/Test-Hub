@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             btnDrawCircle = new Button();
+            btnToggleCircle = new Button();
             SuspendLayout();
             // 
             // btnDrawCircle
@@ -42,11 +43,23 @@
             btnDrawCircle.UseVisualStyleBackColor = true;
             btnDrawCircle.Click += btnDrawCircle_Click;
             // 
+            // btnToggleCircle
+            // 
+            btnToggleCircle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnToggleCircle.Location = new Point(189, 12);
+            btnToggleCircle.Name = "btnToggleCircle";
+            btnToggleCircle.Size = new Size(171, 75);
+            btnToggleCircle.TabIndex = 0;
+            btnToggleCircle.Text = "Toggle Circle";
+            btnToggleCircle.UseVisualStyleBackColor = true;
+            btnToggleCircle.Click += btnToggleCircle_Click;
+            // 
             // TestHub
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnToggleCircle);
             Controls.Add(btnDrawCircle);
             Name = "TestHub";
             Text = "TestHub";
@@ -57,5 +70,6 @@
         #endregion
 
         private Button btnDrawCircle;
+        private Button btnToggleCircle;
     }
 }
