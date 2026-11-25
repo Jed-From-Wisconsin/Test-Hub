@@ -12,11 +12,14 @@ namespace JE.TestHub.UI
     {
         private bool dotVisible = true;
         private bool ctrlPressed = false;
+        private bool spacePressed = false;
+        private bool previousDotVisible = true;
         public ToggleCircle()
         {
             InitializeComponent();
             this.ClientSize = new Size(500, 500);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.KeyPreview = true;
         }
 
         private void ToggleCircle_Load(object? sender, EventArgs e)
@@ -69,6 +72,17 @@ namespace JE.TestHub.UI
                 dotVisible = !dotVisible;
                 this.Invalidate();
             }
+
+            if (e.KeyCode == Keys.Space && !spacePressed)
+            {
+                spacePressed = true;
+                previousDotVisible = dotVisible;
+
+                dotVisible = !dotVisible;
+                this.Invalidate();
+
+                e.Handled = true;
+            }
         }
 
         private void ToggleCircle_KeyUp(object? sender, KeyEventArgs e)
@@ -76,6 +90,16 @@ namespace JE.TestHub.UI
             if (e.KeyCode == Keys.ControlKey || e.KeyCode == Keys.LControlKey ||e.KeyCode == Keys.RControlKey)
             {
                 ctrlPressed = false;
+            }
+
+            if (e.KeyCode == Keys.Space && spacePressed)
+            {
+                spacePressed = false;
+                dotVisible = previousDotVisible;
+
+                this.Invalidate();
+
+                e.Handled = true;
             }
         }
 
