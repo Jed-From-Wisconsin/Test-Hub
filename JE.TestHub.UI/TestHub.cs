@@ -22,5 +22,11 @@ namespace JE.TestHub.UI
             ToggleCircle tc = new ToggleCircle();
             tc.Show();
         }
+
+        private void btnMoveCircle_Click(object sender, EventArgs e)
+        {
+            MoveCircle mc = new MoveCircle();
+            mc.Show();
+        }
     }
 }
