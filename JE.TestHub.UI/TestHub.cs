@@ -28,5 +28,11 @@ namespace JE.TestHub.UI
             MoveCircle mc = new MoveCircle();
             mc.Show();
         }
+
+        private void btnDragCircle_Click(object sender, EventArgs e)
+        {
+            DragCircle dc = new DragCircle();
+            dc.Show();
+        }
     }
 }

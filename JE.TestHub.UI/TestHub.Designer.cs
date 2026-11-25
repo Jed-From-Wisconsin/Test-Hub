@@ -31,6 +31,7 @@
             btnDrawCircle = new Button();
             btnToggleCircle = new Button();
             btnMoveCircle = new Button();
+            btnDragCircle = new Button();
             SuspendLayout();
             // 
             // btnDrawCircle
@@ -66,11 +67,23 @@
             btnMoveCircle.UseVisualStyleBackColor = true;
             btnMoveCircle.Click += btnMoveCircle_Click;
             // 
+            // btnDragCircle
+            // 
+            btnDragCircle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDragCircle.Location = new Point(543, 12);
+            btnDragCircle.Name = "btnDragCircle";
+            btnDragCircle.Size = new Size(171, 75);
+            btnDragCircle.TabIndex = 0;
+            btnDragCircle.Text = "Drag Circle";
+            btnDragCircle.UseVisualStyleBackColor = true;
+            btnDragCircle.Click += btnDragCircle_Click;
+            // 
             // TestHub
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnDragCircle);
             Controls.Add(btnMoveCircle);
             Controls.Add(btnToggleCircle);
             Controls.Add(btnDrawCircle);
@@ -85,5 +98,6 @@
         private Button btnDrawCircle;
         private Button btnToggleCircle;
         private Button btnMoveCircle;
+        private Button btnDragCircle;
     }
 }
